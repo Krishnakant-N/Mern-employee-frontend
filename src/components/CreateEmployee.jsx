@@ -13,7 +13,7 @@ function CreateEmployee() {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const response = await fetch("http://localhost:3000/demo", {
+    const response = await fetch(import.meta.env.VITE_SERVER_URL || "http://localhost:3000/demo", {
       method: "POST",
       body: JSON.stringify(form),
       headers: {
